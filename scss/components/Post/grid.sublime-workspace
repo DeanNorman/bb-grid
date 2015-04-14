@@ -1,0 +1,247 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"sin",
+				"SinglePost"
+			],
+			[
+				"Singl",
+				"SinglePost"
+			],
+			[
+				"Sing",
+				"SinglePost"
+			],
+			[
+				"bac",
+				"background-size"
+			],
+			[
+				"fa",
+				"fadeSlideToggle"
+			],
+			[
+				"wind",
+				"winWidth"
+			],
+			[
+				"win",
+				"winWidth"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"wrap",
+				"Word Wrap: Toggle"
+			],
+			[
+				"html",
+				"Set Syntax: HTML"
+			],
+			[
+				"html	",
+				"HTML: Encode Special Characters"
+			],
+			[
+				"css",
+				"Set Syntax: CSS"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"set sass",
+				"Set Syntax: Sass"
+			],
+			[
+				"INSTALL",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/deannorman/Sites/food-theme/scss/components/Sidebar/_Widgets.scss",
+		"/Users/deannorman/Sites/food-theme/scss/components/Sidebar/_Sidebar.scss",
+		"/Users/deannorman/Sites/food-theme/scss/components/Header/_Header.scss",
+		"/Users/deannorman/Sites/food-theme/js/masonry.js",
+		"/Users/deannorman/.bashrc",
+		"/Users/deannorman/Sites/food-theme/.gitignore",
+		"/Users/deannorman/Sites/blogboat/wp-content/themes/thesmithsblogboat/fontawesome.css",
+		"/Users/deannorman/Sites/blogboat/wp-content/themes/thesmithsblogboat/functions.php",
+		"/Users/deannorman/Sites/jquery/accordian/30DaysJQuery/sf-30daysJQuery/lesson-13.zip",
+		"/Users/deannorman/Sites/jquery/css-switcher/night.css",
+		"/index.html",
+		"/Users/deannorman/22seven/22sevenBlog/wp-content/themes/twentytwoseven/style.css",
+		"/Users/deannorman/22seven/22sevenBlog/wp-config.php",
+		"/Users/deannorman/Downloads/MAMP PRO v3.0.7.3 MacOSX-P2P/MAMP_PRO_3.0.7.3_SN.txt"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"#container",
+			".comment-content",
+			".entry-content",
+			"file skipped",
+			"Sidebar",
+			"components",
+			"!important",
+			"<img",
+			"feel",
+			"Btn Btn-readMore",
+			"Post-Title",
+			"Cooking",
+			"Co",
+			"co",
+			"Co",
+			"Post-container",
+			"div",
+			"article",
+			".widget-area #s ",
+			"input",
+			".widget-area",
+			".widget",
+			".site",
+			"0",
+			"width",
+			"wp_head",
+			"mongoi",
+			"rails"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		},
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.615594018038,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"global",
+				"scss/components/Base/_Global.scss"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 223.0,
+	"status_bar_visible": true
+}

@@ -1,0 +1,78 @@
+// ==========================================================================
+// Single Post
+// ==========================================================================
+
+
+.Archive {
+	font-family: 'Oswald', sans-serif;
+	font-size: 30px;
+	line-height:1;
+	max-width: 96%;
+
+}
+.SinglePost {
+	background-color: #FFF;
+	// display: inline-block;
+}
+.SinglePost-header {
+	position: relative;
+	margin-bottom: 17px;
+ 	padding: 16px 20px 0px;
+}
+.SinglePost-title {
+	font-family: 'Oswald', sans-serif;
+	font-size: 22px;
+	line-height: 1.2;
+	color: #000;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}
+.SinglePost-date {
+	font-size: 11px;
+	color: #b1b1b1;
+	font-family: Open Sans, arial;
+	text-transform: none;
+	padding-top: 3px;
+	letter-spacing: 0px;
+}
+.SinglePost-category {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	background: #9f6e6a;
+
+	& a {
+		font-size: 11px;
+		font-family: serif;
+		color: #fff;
+		font-weight: 300;
+		text-decoration: none;
+		line-height: 2;
+		padding: 12px;
+		letter-spacing: 2px;
+	}
+}
+
+.SinglePost-content { 
+	
+		margin-bottom: 17px;
+	  padding: 16px 20px 0px;
+
+	//save type styles?/
+	& p {
+		font-size: 12px;
+		margin: 0 0 24px;
+		line-height: 1.714285714;
+	}
+}
+
+.SinglePost-content ul {
+  list-style: disc outside;
+  margin: 0 0 24px;
+}
+
+.SinglePost-content li {
+  margin: 0 0 0 36px;
+}
+
+.SinglePost-content a:visited {color: #9f9f9f;}

@@ -1,0 +1,28 @@
+// ==========================================================================
+// Footer
+// ==========================================================================
+
+.Footer {
+  border-top: 1px solid #ededed; 
+  margin-top: 24px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 24px 0;
+ 
+}
+.Footer-copywright {
+	font-size: 12px;
+	line-height: 2;
+	text-align: center;
+}
+.Footer-author {
+	font-size: 9px;
+}
+.Footer-author-link {
+	color:#686868;
+
+	&:hover {
+		color: #9f9f9f;
+	}
+}
+

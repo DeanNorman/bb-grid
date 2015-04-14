@@ -1,0 +1,119 @@
+// ==========================================================================
+// Post "card" styling
+// ==========================================================================
+
+// Contains all the posts
+.Posts-container {}
+
+// Single post card
+.Post-container {
+	background-color: #FFF;
+}
+
+.Post-header {
+	margin-bottom: 17px;
+	padding-top: 13px;
+}
+
+.Post-title {
+	font-family: 'Oswald', sans-serif;
+	font-size: 17px;
+	text-transform:uppercase;
+	max-width: 280px; // so the cats dont overlap
+	padding:0;
+	margin:0;
+
+	& a {
+		
+		letter-spacing: 2px;
+		color:#000;
+		text-decoration: none;
+	}
+}
+
+.Post-byline {
+	font-size: 11px;
+	color: #b1b1b1;
+	font-family: Open Sans, arial;
+	text-transform: none;
+	letter-spacing: 0px;
+	margin:0;
+}
+
+.Post-category {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	background: #9f6e6a;
+	
+	& a {
+		font-size: 11px;
+		font-family: serif;
+		color: #fff;
+		font-weight: 300;
+		text-decoration: none;
+		line-height: 2;
+		padding: 12px;
+		letter-spacing: 2px;
+	}
+}
+
+
+.Post-thumbnail {}
+.Post-thumbnailImg {
+	width: 100%;
+}
+
+.post-thumbnailimg {
+	width: 100%;
+}
+.Post-excerpt {
+	  margin: 10px 0 15px 0;
+	& p {
+		font-size: 12px;
+		line-height: 1.7;
+		// padding: 20px 20px 0px;321
+	}
+}
+
+.Post-footerMeta {
+	margin-top: 24px;
+
+}
+
+.Post-readMoreBtn {
+	position: relative;
+	bottom: 17px;
+	width: 119px;
+	float: right;
+	
+	text-align: center;
+	background: #591431;
+	height: 30px;
+
+	& a {
+		  color: #fff;
+		  text-decoration: none;
+		  line-height: 2.7;
+		  font-size: 11px;
+		}
+}
+
+
+
+// masonry selector
+.item { 
+	width: 100%;
+	padding: 0 20px;
+	-moz-box-sizing: border-box;
+	     box-sizing: border-box;
+	margin-bottom:30px;
+
+	@include pg-bp(sm) {
+		width: 47%; 	
+	}
+
+}
+
+
+

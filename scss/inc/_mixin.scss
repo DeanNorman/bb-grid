@@ -1,0 +1,63 @@
+// ==========================================================================
+// List of mixins
+// ==========================================================================
+
+// @media query shortcut mixins
+ @mixin pg-bp($point) {
+    // XS obj vars
+    $bp-xs-obj: nth($pg-bps, 1);
+    $bp-xs: nth($bp-xs-obj, 1);
+
+    // If XS
+    @if $point == $bp-xs {
+        @content;
+    }
+
+    @else {
+        @each $bp in $pg-bps {
+            $bp-name: nth($bp, 1);
+            $bp-width: nth($bp, 2);
+
+            @if $point == $bp-name {
+                @media (min-width: $bp-width) {
+                    @content;
+                }
+            }
+
+        }
+    }
+}
+
+// Return relevent gutter based on viewport
+@function pg-gutter($size, $horizontal) {
+
+    @if $horizontal == true {
+
+        @each $bp in $pg-bps {
+            $bp-name: nth($bp, 1);
+            $bp-h-gutter: nth($bp, 3);
+
+            @if $size == $bp-name {
+                @return $bp-h-gutter;
+            }
+        }
+    }
+
+    @else {
+        @each $bp in $pg-bps {
+            $bp-name: nth($bp, 1);
+            $bp-v-gutter: nth($bp, 4);
+
+            @if $size == $bp-name {
+                @return $bp-v-gutter;
+            }
+        }
+    }
+
+}
+
+// Calculate the perc width of the column
+@function pg-col-width($col-total, $col-count) {
+    // Percentage width per column
+    @return (100 / ($col-total / $col-count)) * 1%;
+}

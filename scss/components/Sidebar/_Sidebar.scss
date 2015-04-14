@@ -1,0 +1,191 @@
+// ==========================================================================
+// Sidebar
+// ==========================================================================
+
+.Sidebar {
+
+	background-color: #fff;
+	  padding: 18px;
+	
+}
+.Sidebar-widget {
+	  text-align: center;
+	  font-size: 12px;//
+	  line-height: 1.5;
+	  padding-top: 10px;
+	  margin-bottom: 10px;
+	  max-width: 400px;
+	  margin-left: auto;
+	  margin-right: auto;
+
+	  & li {
+	  	list-style:none;
+	  }
+}
+
+.Sidebar-wpLists {
+
+	li {list-style:none;
+	font-size: 13px;
+	line-height: 1.8;
+}
+}//
+.Sidebar-wpWidget-title {
+	font-size: 11px;
+	  font-size: 0.785714286rem;
+	  line-height: 2.181818182;
+	  font-weight: bold;
+	  text-transform: uppercase;
+	  color: #636363;
+}
+
+.profile-picture {
+	  margin-top: -10px;
+}
+
+
+.about-me-widget-title {
+	font-family: 'Libre Baskerville', serif;
+	font-size: 19px;
+	font-style: italic;
+	color: #292929;
+	margin-bottom: 0px;
+	padding-top: 10px;
+}
+.social-buttons a {
+  height: 48px;
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+  margin-top: 4px;
+  line-height: 2.7;
+  font-family: 'Pathway Gothic One', sans-serif;
+  font-size: 18px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #fff !important;
+  letter-spacing: 3px;
+  font-weight: lighter;
+}
+
+// Working with wordpress set styles for their widgets :<
+
+.module-heading {
+  font-size: 11px;
+  font-size: 0.785714286rem;
+  line-height: 2.181818182;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #636363;
+}
+
+.cat-item a {
+
+}
+
+
+input#searchsubmit {
+  font-family: 'Oswald', sans-serif;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 16px;
+  padding-top: 4px;
+  padding-right: 10px;
+  padding-left: 10px;
+  letter-spacing: 2px;
+  background-color: #eec6b4;
+  border: 0px;
+  box-shadow: none;
+  background-image: none;
+  border-radius: 0px;
+  padding-bottom: 5px;
+  cursor:pointer;
+}
+
+input[type="text"]{
+  border: solid #c6c6c6 1px;
+  border-radius: 0px;
+  font-family: inherit;
+  padding: 6px;
+  padding: 0.428571429rem;
+}
+
+// Social media buttons colors
+
+	.social-buttons .one {
+	background:#941a3f;
+	} 
+	
+	.social-buttons  .two {
+	background:#e95166;
+	}
+
+	.social-buttons  .three {
+	background:#fcc584;
+	}
+
+	.social-buttons  .four{
+	background:#eec6b9;
+	}
+
+	.social-buttons .five {
+	background:#f7ee89;
+	}
+	.social-buttons .six {
+	background:#f0dea8;
+	}
+	.social-buttons .seven {
+	background:#fbf964;
+	}
+	.social-buttons .eight {
+	background:#eeb439;
+	}
+	.social-buttons .nine {
+	background:#e49457;
+	}
+	.social-buttons .ten {
+	background:#fe9a7a;
+	}
+	.social-buttons .eleven {
+	background:#fb884f;
+	}
+	.social-buttons .twelve {
+	background:#fdde80;
+	}
+	.social-buttons .thirteen {
+	background:#c7f6f7;
+	}
+	.social-buttons .fourteen {
+	background:#e4fac2;
+	}
+	.social-buttons .fifteen {
+	background:#cce59c;
+	}
+	.social-buttons .sixteen {
+	background:#b7e1f1;
+	}
+	.social-buttons .seventeen {
+	background:#89adf7;
+	}
+	.social-buttons .eightteen {
+	background:#e3e2df;
+	}
+	.social-buttons .nineteen {
+	background:#9ada9b;
+	}
+	.social-buttons .twenty {
+	background:#7eb784;
+	}
+
+	.social-buttons .twentyone {
+	background:#9bc443;
+	}
+	.social-buttons .twentytwo {
+	background:#c5fe7a;
+	}
+	.social-buttons .twentythree {
+	background:#a3baaa;
+	}
+	.social-buttons .twentyfour {
+	background:#90af67;
+	}

@@ -1,0 +1,288 @@
+// ==========================================================================
+// PlusGrid file
+//
+// The grid works as follows:
+// .<NAMESPACE>-<VIEWPORT>-<COLUMN SPAN>-<TOTAL COLUMNS>
+//
+// A typical example may look like this:
+// .pg-sm-4-12
+// It's easy to ready as "PlusGrid small 4/12" or
+// "PlusGrid small four-twelfth"
+//
+// Note: The 3 identical loops used in this file aren't redundant, the 3 are
+// necessary for specificity
+// ==========================================================================
+
+// PlusGrid clearfix
+// ==========================================================================
+.pg-cf {
+    &:before,
+    &:after {
+        content: " ";
+        display: table;
+    }
+
+    &:after {
+        clear: both;
+    }
+
+    *zoom: 1; // for IE 6/7
+}
+
+// PlusGrid row
+// ==========================================================================
+.pg-container {
+    padding-left: $pg-xs-h-gutter;
+    padding-right: $pg-xs-h-gutter;
+
+    @include pg-bp(sm) {
+        padding-left: $pg-sm-h-gutter;
+        padding-right: $pg-sm-h-gutter;
+    }
+
+    @include pg-bp(md) {
+        padding-left: $pg-md-h-gutter;
+        padding-right: $pg-md-h-gutter;
+    }
+
+    @include pg-bp(lg) {
+        padding-left: $pg-lg-h-gutter;
+        padding-right: $pg-lg-h-gutter;
+    }
+}
+
+// PlusGrid row
+// ==========================================================================
+.pg-row {
+    @extend .pg-cf;
+    margin-left: -$pg-xs-h-gutter;
+    margin-right: -$pg-xs-h-gutter;
+
+    @include pg-bp(sm) {
+        margin-left: -$pg-sm-h-gutter;
+        margin-right: -$pg-sm-h-gutter;
+    }
+
+    @include pg-bp(md) {
+        margin-left: -$pg-md-h-gutter;
+        margin-right: -$pg-md-h-gutter;
+    }
+
+    @include pg-bp(lg) {
+        margin-left: -$pg-lg-h-gutter;
+        margin-right: -$pg-lg-h-gutter;
+    }
+}
+
+// Viewport loop
+//
+// First viewport loop
+// ==========================================================================
+@for $i from 1 through length($pg-bps) {
+    $pg-vp-obj: nth($pg-bps, $i);
+    $pg-viewport: nth($pg-vp-obj, 1);
+
+    // General grid cell styling
+    //
+    // Used and styled as primary "class", while the others are seen
+    // as modifiers
+    // ==========================================================================
+    .pg-#{$pg-viewport}-col, // IE7 Fix
+    [class^="pg-#{$pg-viewport}-"],
+    [class*=" pg-#{$pg-viewport}-"] {
+        @include box-sizing(border-box);
+        float: left;
+
+        // Vertical
+        padding-left: pg-gutter($pg-viewport, true);
+        padding-right: pg-gutter($pg-viewport, true);
+        // Horizontal
+        padding-top: pg-gutter($pg-viewport, false);
+        padding-bottom: pg-gutter($pg-viewport, false);
+
+        width: 100%;
+    }
+}
+
+// PlusGrid loop
+//
+// Build grid
+// Run through the different breakpoint names
+// Then run through the total columns
+// Then run through each cell in the column
+//
+// Second viewport loop
+// ==========================================================================
+@for $i from 1 through length($pg-bps) {
+    $pg-vp-obj: nth($pg-bps, $i);
+    $pg-viewport: nth($pg-vp-obj, 1);
+
+    @for $pg-columns from 2 through $pg-column-total {
+
+        // For each column in total columns
+        @for $col from 1 through $pg-columns {
+
+            .pg-#{$pg-viewport}-#{$col}-#{$pg-columns} {
+                // XS doesn't get a breakpoint
+                @if $pg-viewport == 'xs' {
+                    width: pg-col-width($pg-columns, $col);
+                }
+                @else {
+                    @include pg-bp($pg-viewport) {
+                        width: pg-col-width($pg-columns, $col);
+                        padding-left: pg-gutter($pg-viewport, true);
+                        padding-right: pg-gutter($pg-viewport, true);
+
+                        // If vertical gutter is enabled
+                        padding-top: pg-gutter($pg-viewport, false);
+                        padding-bottom: pg-gutter($pg-viewport, false);
+                    }
+                }
+
+                // Hard Row
+                // .pg-row--hard-row adds support for each row to start at the
+                // same baseline. This ONLY works if all cells begin with a 1
+                // and they have the same denoimantor.
+                // eg. all 1/4 or all 1/3 or all 1/4, etc
+                // eg. .pg-sm-1-4, .pg-sm-1-3, .pg-md-1-5, etc
+                @if $ph-mod-hard-row == true {
+                    @if $col == 1 {
+                        .pg-row--hard-row &:nth-child(#{$pg-columns}n+1) { // reset
+                            clear: left;
+                        }
+
+                        .pg-row--hard-row &:first-child { // reset
+                            clear: none;
+                        }
+                    }
+                }
+            }
+        }
+
+    } // @for
+}
+
+// Modifiers
+// ==========================================================================
+
+// Third viewport loop
+// Create modifiers to dynamically modify gutter size
+@each $pg-viewport in $pg-bp-list {
+
+    // List length
+    $length: length($pg-bp-list);
+
+    // Current item index in list
+    $index: index($pg-bp-list, $pg-viewport);
+
+    // Index of next item
+    $nextItem: $index + 1;
+
+    // For each gutter size in list.
+    // (List defined in config file)
+    @each $pg-gutter-size in $pg-gutter-size-list {
+
+        .pg-row--#{$pg-viewport}-gutter-#{$pg-gutter-size} {
+            margin-left: -$pg-gutter-size;
+            margin-right: -$pg-gutter-size;
+
+            & > [class^="pg-#{$pg-viewport}-"],
+            & > [class*=" pg-#{$pg-viewport}-"] {
+                @include pg-bp($pg-viewport) {
+
+                    // Multiply by 1px to return pixels
+                    padding-left: $pg-gutter-size * 1px;
+                    padding-right: $pg-gutter-size * 1px;
+                    padding-top: $pg-gutter-size * 1px;
+                    padding-bottom: $pg-gutter-size * 1px;
+
+                }
+            }
+
+            // Provided there is a next item
+            @if $length - $nextItem > -1 {
+                // Ensure the padding "filters" up to larger viewports.
+                // Unfortunately this can't natively filter to larger
+                // viewports so this must be manually created.
+
+                // Run through larger viewport cells and make sure that
+                // The CSS is applied to them
+                @for $i from $nextItem through length($pg-bp-list) {
+                    $pg-greater-viewport: nth($pg-bp-list, $i);
+
+                    & > [class*="pg-#{$pg-greater-viewport}-"],
+                    & > [class*=" pg-#{$pg-greater-viewport}-"] {
+                        @include pg-bp($pg-viewport) {
+
+                            // Multiply by 1px to return pixels
+                            padding-left: $pg-gutter-size * 1px;
+                            padding-right: $pg-gutter-size * 1px;
+                            padding-top: $pg-gutter-size * 1px;
+                            padding-bottom: $pg-gutter-size * 1px;
+
+                        }
+                    }
+                }
+            }
+
+        }
+
+    }
+}
+
+// Remove gutters
+.pg-row--no-gutter, // Remove gutter
+.pg-row--no-h-gutter { // Remove horizontal gutter
+    margin-left: 0;
+    margin-right: 0;
+}
+
+// Fourth viewport loop
+// Remove specific gutters
+@for $i from 1 through length($pg-bps) {
+    $pg-vp-obj: nth($pg-bps, $i);
+    $pg-viewport: nth($pg-vp-obj, 1);
+
+    // Remove gutter
+    .pg-row--no-gutter {
+        & > [class^="pg-#{$pg-viewport}-"],
+        & > [class*=" pg-#{$pg-viewport}-"] {
+            padding: 0;
+        }
+
+        // IE7 fix
+        & > .pg-#{$pg-viewport}-col {
+            padding: 0;
+        }
+    }
+
+    // Remove horizontal gutter
+    .pg-row--no-h-gutter {
+        & > [class^="pg-#{$pg-viewport}-"],
+        & > [class*=" pg-#{$pg-viewport}-"] {
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        // IE7 fix
+        & > .pg-#{$pg-viewport}-col {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+
+    // Remove vertical gutter
+    .pg-row--no-v-gutter {
+        & > [class^="pg-#{$pg-viewport}-"],
+        & > [class*=" pg-#{$pg-viewport}-"] {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+
+        // IE7 fix
+        & > .pg-#{$pg-viewport}-col {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+    }
+}
