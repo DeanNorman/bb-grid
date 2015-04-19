@@ -18,21 +18,21 @@
 <!-- You can start editing here. -->
 
 <?php if ( have_comments() ) : ?>
-  <h3 id="comments"><?php comments_number('No Responses', 'One Response', '% Responses' );?> to &#8220;<?php the_title(); ?>&#8221;</h3>
+  <h3 id="heading-comments"><?php comments_number('No Responses', 'One Response', '% Responses' );?> to &#8220;<?php the_title(); ?>&#8221;</h3>
 
-  <div class="navigation">
+<!--   <div class="navigation">
     <div class="alignleft"><?php previous_comments_link() ?></div>
     <div class="alignright"><?php next_comments_link() ?></div>
-  </div>
+  </div> -->
 
   <ol class="commentlist">
   <?php wp_list_comments(); ?>
   </ol>
 
-  <div class="navigation">
+<!--   <div class="navigation">
     <div class="alignleft"><?php previous_comments_link() ?></div>
     <div class="alignright"><?php next_comments_link() ?></div>
-  </div>
+  </div> -->
  <?php else : // this is displayed if there are no comments so far ?>
 
   <?php if ( comments_open() ) : ?>
@@ -68,20 +68,28 @@
 
 <?php else : ?>
 
-<p><input type="text" name="author" id="author" value="<?php echo esc_attr($comment_author); ?>" size="22" tabindex="1" <?php if ($req) echo "aria-required='true'"; ?> />
-<label for="author"><small>Name <?php if ($req) echo "(required)"; ?></small></label></p>
+<p>
+  <label for="author"><small>Name <?php if ($req) echo "(required)"; ?></small></label>
+  <input type="text" name="author" id="author" value="<?php echo esc_attr($comment_author); ?>" size="22" tabindex="1" <?php if ($req) echo "aria-required='true'"; ?> />
+</p>
 
-<p><input type="text" name="email" id="email" value="<?php echo esc_attr($comment_author_email); ?>" size="22" tabindex="2" <?php if ($req) echo "aria-required='true'"; ?> />
-<label for="email"><small>Mail (will not be published) <?php if ($req) echo "(required)"; ?></small></label></p>
+<p>
+  <label for="email"><small>Mail (will not be published) <?php if ($req) echo "(required)"; ?></small></label>
+  <input type="text" name="email" id="email" value="<?php echo esc_attr($comment_author_email); ?>" size="22" tabindex="2" <?php if ($req) echo "aria-required='true'"; ?> />
+</p>
 
-<p><input type="text" name="url" id="url" value="<?php echo esc_attr($comment_author_url); ?>" size="22" tabindex="3" />
-<label for="url"><small>Website</small></label></p>
+<p>
+  <label for="url"><small>Website</small></label>
+  <input type="text" name="url" id="url" value="<?php echo esc_attr($comment_author_url); ?>" size="22" tabindex="3" />
+</p>
 
 <?php endif; ?>
 
 <!--<p><small><strong>XHTML:</strong> You can use these tags: <code><?php echo allowed_tags(); ?></code></small></p>-->
 
-<p><textarea name="comment" id="comment" cols="58" rows="10" tabindex="4"></textarea></p>
+<p>
+  <label for="comment">Comment</label>
+  <textarea name="comment" id="comment" cols="58" rows="10" tabindex="4"></textarea></p>
 
 <p><input name="submit" type="submit" id="submit" tabindex="5" value="Submit Comment" />
 <?php comment_id_fields(); ?>

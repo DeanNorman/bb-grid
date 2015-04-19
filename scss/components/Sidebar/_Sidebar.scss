@@ -89,7 +89,7 @@ input#searchsubmit {
   color: #fff;
   text-transform: uppercase;
   font-size: 16px;
-  padding-top: 4px;
+  padding-top: 3px;
   padding-right: 10px;
   padding-left: 10px;
   letter-spacing: 2px;
@@ -98,8 +98,9 @@ input#searchsubmit {
   box-shadow: none;
   background-image: none;
   border-radius: 0px;
-  padding-bottom: 5px;
+  padding-bottom: 4px;
   cursor:pointer;
+  vertical-align: middle;
 }
 
 input[type="text"]{
@@ -108,6 +109,7 @@ input[type="text"]{
   font-family: inherit;
   padding: 6px;
   padding: 0.428571429rem;
+    vertical-align: middle;
 }
 
 // Social media buttons colors
